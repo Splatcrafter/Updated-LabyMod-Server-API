@@ -7,8 +7,8 @@ group = "net.labymod"
 version = properties["VERSION"] as String
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -23,10 +23,6 @@ repositories {
     maven {
         name = "bungeecord-repository"
         url = "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-    maven {
-        name = "sponge-repository"
-        url = "https://repo.spongepowered.org/maven"
     }
 
     maven {
@@ -51,32 +47,27 @@ configurations {
 
 
 dependencies {
-    compile(project(":labymod-api")) {
+    api(project(":labymod-api")) {
         exclude group: "com.google.code.gson"
         exclude group: "com.google.guava"
         exclude group: "io.netty"
     }
-    compile(project(":labymod-common")) {
+  api(project(":labymod-common")) {
         exclude group: "com.google.code.gson"
         exclude group: "com.google.guava"
         exclude group: "io.netty"
     }
-    compile(project(":proxy:bungeecord")) {
+  api(project(":proxy:bungeecord")) {
         exclude group: "com.google.code.gson"
         exclude group: "com.google.guava"
         exclude group: "io.netty"
     }
-    compile(project(":proxy:velocity")) {
+  api(project(":proxy:velocity")) {
         exclude group: "com.google.code.gson"
         exclude group: "com.google.guava"
         exclude group: "io.netty"
     }
-    compile(project(":server:bukkit")) {
-        exclude group: "com.google.code.gson"
-        exclude group: "com.google.guava"
-        exclude group: "io.netty"
-    }
-    compile(project(":server:sponge")) {
+  api(project(":server:bukkit")) {
         exclude group: "com.google.code.gson"
         exclude group: "com.google.guava"
         exclude group: "io.netty"

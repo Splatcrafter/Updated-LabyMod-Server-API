@@ -84,16 +84,7 @@ public final class BukkitPayloadTransmitter {
   }
 
   private void sendCustomPayloadPacket(Player player, PacketContainer packet) {
-    try {
-      ProtocolLibrary.getProtocolManager().sendServerPacket(player, packet);
-    } catch (InvocationTargetException exception) {
-      Bukkit.getServer()
-          .getLogger()
-          .log(
-              Level.SEVERE,
-              "Failed to send server packet with ProtocolLib to " + player.getName(),
-              exception);
-    }
+    ProtocolLibrary.getProtocolManager().sendServerPacket(player, packet);
   }
 
   private boolean isLegacyVersion() {

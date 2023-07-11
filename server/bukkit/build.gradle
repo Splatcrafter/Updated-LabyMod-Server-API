@@ -28,9 +28,9 @@ repositories {
 
 dependencies {
     compileOnly(project(":labymod-common"))
-    compileOnly("org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT")
-    compileOnly("com.comphenix.protocol:ProtocolLib:4.5.0")
-    compileOnly("org.lz4:lz4-java:1.4.1")
+    compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("com.comphenix.protocol:ProtocolLib:5.0.0")
+    compileOnly("org.lz4:lz4-java:1.8.0")
 }
 
 processResources {
@@ -45,4 +45,6 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude "plugin.yml"
     }
+
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
