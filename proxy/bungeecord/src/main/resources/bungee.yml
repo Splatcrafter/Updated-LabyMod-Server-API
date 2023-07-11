@@ -1,4 +1,4 @@
 name: LabyApi
 main: net.labymod.serverapi.bungee.BungeeLabyModPlugin
-version: ${version}
+version: 1.1.0
 author: LabyMedia GmbH
