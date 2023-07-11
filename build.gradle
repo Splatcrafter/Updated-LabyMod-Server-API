@@ -1,79 +1,84 @@
 plugins {
-    id("java-library")
-    id("com.github.johnrengelman.shadow") version("6.1.0")
+  id("java-library")
+  id("com.github.johnrengelman.shadow") version("6.1.0")
 }
 
 group = "net.labymod"
 version = properties["VERSION"] as String
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
-    mavenCentral()
-    jcenter()
+  mavenCentral()
+  jcenter()
 
-    maven {
-        name = "velocity-repository"
-        url = "https://repo.velocitypowered.com/snapshots/"
-    }
+  maven {
+    name = "velocity-repository"
+    url = "https://repo.velocitypowered.com/snapshots/"
+  }
 
-    maven {
-        name = "bungeecord-repository"
-        url = "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+  maven {
+    name = "bungeecord-repository"
+    url = "https://oss.sonatype.org/content/repositories/snapshots"
+  }
 
-    maven {
-        name = "bungeecord-repository"
-        url = "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-    maven {
-        name = "spigot-repository"
-        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
-    }
+  maven {
+    name = "bungeecord-repository"
+    url = "https://oss.sonatype.org/content/repositories/snapshots"
+  }
+  maven {
+    name = "spigot-repository"
+    url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+  }
 
-    maven {
-        name = "dmulloy2"
-        url = "https://repo.dmulloy2.net/nexus/repository/public/"
-    }
+  maven {
+    name = "dmulloy2"
+    url = "https://repo.dmulloy2.net/nexus/repository/public/"
+  }
 }
 
 configurations {
-    shade
-    compile.extendsFrom shade
+  shade
+  compile.extendsFrom shade
 }
 
 
 dependencies {
-    api(project(":labymod-api")) {
-        exclude group: "com.google.code.gson"
-        exclude group: "com.google.guava"
-        exclude group: "io.netty"
-    }
+  api(project(":labymod-api")) {
+    exclude group: "com.google.code.gson"
+    exclude group: "com.google.guava"
+    exclude group: "io.netty"
+  }
   api(project(":labymod-common")) {
-        exclude group: "com.google.code.gson"
-        exclude group: "com.google.guava"
-        exclude group: "io.netty"
-    }
+    exclude group: "com.google.code.gson"
+    exclude group: "com.google.guava"
+    exclude group: "io.netty"
+  }
+  api(project("widgets")) {
+    exclude group: "com.google.code.gson"
+    exclude group: "com.google.guava"
+    exclude group: "io.netty"
+  }
   api(project(":proxy:bungeecord")) {
-        exclude group: "com.google.code.gson"
-        exclude group: "com.google.guava"
-        exclude group: "io.netty"
-    }
+    exclude group: "com.google.code.gson"
+    exclude group: "com.google.guava"
+    exclude group: "io.netty"
+  }
   api(project(":proxy:velocity")) {
-        exclude group: "com.google.code.gson"
-        exclude group: "com.google.guava"
-        exclude group: "io.netty"
-    }
+    exclude group: "com.google.code.gson"
+    exclude group: "com.google.guava"
+    exclude group: "io.netty"
+  }
   api(project(":server:bukkit")) {
-        exclude group: "com.google.code.gson"
-        exclude group: "com.google.guava"
-        exclude group: "io.netty"
-    }
+    exclude group: "com.google.code.gson"
+    exclude group: "com.google.guava"
+    exclude group: "io.netty"
+  }
 }
 
 shadowJar {
-    setClassifier("")
+  setClassifier("")
 }

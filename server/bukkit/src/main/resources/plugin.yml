@@ -1,6 +1,6 @@
 name: LabyApi
 author: LabyMedia GmbH
-version: ${version}
+version: 1.0.0
 main: net.labymod.serverapi.bukkit.BukkitLabyModPlugin
 depend:
   - ProtocolLib

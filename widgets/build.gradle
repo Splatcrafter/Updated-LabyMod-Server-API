@@ -1,0 +1,19 @@
+plugins {
+  id 'java-library'
+}
+
+group = 'net.labymod'
+version = 'unspecified'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation('com.google.code.gson:gson:2.8.9')
+  compileOnly(project(":labymod-common"))
+}
+
+test {
+  useJUnitPlatform()
+}

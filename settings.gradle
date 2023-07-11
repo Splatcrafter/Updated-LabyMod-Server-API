@@ -4,6 +4,9 @@ rootProject.name = "LabyApi"
 include("labymod-api")
 include("labymod-common")
 
+// Widgets
+include ('widgets')
+
 // Proxies
 include("proxy:velocity")
 include("proxy:bungeecord")
